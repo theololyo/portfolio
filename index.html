@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Theo Markovic</title>
+    <!-- bower:css-->
+    <link rel="stylesheet" href="bower_components/siimple/dist/siimple.css" />
+    <link rel="stylesheet" href="bower_components/pagePiling.js/jquery.pagepiling.css">
+    <!--endbower-->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+
+
+
+    <div id="pagepiling">
+        <div class="section">
+            <div class="grid">
+                <div class="pageContainer">
+                    <div class="row">
+                        <h1>Hi There!</h1>
+                        <h3>I'm Theo, It's nice to finally meet you!</h3>
+                        <h5>I've got some pretty neat stuff to show you, I'd love it if you kept scrolling downwards!</h5>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-3">If you're in a hurry to get in touch, you can always find me on</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="grid">
+                <div class="pageContainer">
+                    <div class="row">
+                        <h1>Hi There!</h1>
+                        <h3>I'm Theo, It's nice to finally meet you!</h3>
+                        <h5>I've got some pretty neat stuff to show you, I'd love it if you kept scrolling downwards!</h5>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-3">If you're in a hurry to get in touch, you can always find me on</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="grid">
+                <div class="pageContainer">
+                    <div class="row">
+                        <h1>Hi There!</h1>
+                        <h3>I'm Theo, It's nice to finally meet you!</h3>
+                        <h5>I've got some pretty neat stuff to show you, I'd love it if you kept scrolling downwards!</h5>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>If you're in a hurry to get in touch, you can always find me on</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- bower:js-->
+    <script src=" bower_components/jQuery/dist/jquery.js "></script>
+    <script src="bower_components/pagePiling.js/jquery.pagepiling.js"></script>
+    <script src="bower_components/jquery.terminal/js/jquery.mousewheel-min.js "></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#pagepiling').pagepiling({
+                menu: null
+                , direction: 'vertical'
+                , verticalCentered: true
+                , sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000']
+                , anchors: []
+                , scrollingSpeed: 700
+                , easing: 'easeInOut'
+                , loopBottom: true
+                , loopTop: false
+                , css3: true
+                , navigation: {
+                    'textColor': '#000'
+                    , 'bulletsColor': '#000'
+                    , 'position': 'right'
+                    , 'tooltips': ['section1', 'section2', 'section3', 'section4']
+                }
+                , normalScrollElements: null
+                , normalScrollElementTouchThreshold: 5
+                , touchSensitivity: 5
+                , keyboardScrolling: true
+                , sectionSelector: '.section'
+                , animateAnchor: true,
+
+                //events
+                onLeave: function (index, nextIndex, direction) {
+                    $('.section').eq(index - 1).find('h1,h2,h3,h4,h5, p').fadeOut(700, 'easeInQuart');
+                    $('.section').eq(nextIndex - 1).find('h1,h2,h3,h4,h5, p').fadeIn(700, 'easeInQuart');
+                }
+                , afterLoad: function (anchorLink, index) {}
+                , afterRender: function () {}
+            , });
+        });
+    </script>
+    <!--endbower-->
+    <!--<script src="js/app.js "></script>-->
+</body>
+
+</html>
